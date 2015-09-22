@@ -5,8 +5,19 @@
 
     <!--> Main listener Application </!-->
     <listener>
-        <listener-class>org.hpbuilder.main.MainListener</listener-class>
+        <listener-class>org.hpbuilder.main.MainContextListener</listener-class>
     </listener>
     <!--> Main listener Application end </!-->
+
+    <!--> Servlets </!-->
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <servlet-class>org.hpbuilder.servlets.MainServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <!--> Servlets end </!-->
 
 </web-app>
