@@ -6,10 +6,7 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 /**
  * Redirects the requests to their actual handler.
@@ -23,20 +20,34 @@ public class MainServlet extends AbstractServlet {
     @Override
     protected void myGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        log.info("Requested URI {}", req.getRequestURI());
+        String uri = req.getRequestURI();
+        log.info("Requested URI {}", uri);
+        if("/".equals(uri) || "\\".equals(uri)) {
+            uri = "test.html";
+        }
 
         resp.setContentType("text/html");
 
         PrintWriter out = resp.getWriter();
-        BufferedReader br = new BufferedReader(new FileReader("test.html"));
-        int len;
-        final char[] buffer = new char[1024 * 8];
-        do {
-            len = br.read(buffer);
-            out.write(buffer);
-        } while (len <= 0);
-        out.close();
-        resp.setStatus(HttpServletResponse.SC_OK);
+        try (
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(uri), "UTF8"))) {
+            int len;
+            final char[] buffer = new char[1024 * 8];
+            do {
+                len = in.read(buffer);
+                out.write(buffer);
+            } while (len <= 0);
+            resp.setStatus(HttpServletResponse.SC_OK);
+        }
+        catch (Exception e) {
+            log.info("Problem reading file", e);
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
+        finally {
+            out.close();
+        }
     }
 
 }

@@ -1,0 +1,54 @@
+img, embed, object, video {
+    max-width: 100%;
+}
+
+nav a, button {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+body {
+    margin: 0;
+}
+
+.pageHeader {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('startseite.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 350px;
+    position: relative;
+}
+
+.pageHeading {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.article {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.textBlock {
+    display: inline-block;
+    max-width: 620px;
+    margin: 10px;
+    text-align: left;
+}
+
+h1 {
+    color: white;
+    font: bold 34pt sans-serif;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 15pt;
+    margin: 10px;
+}
