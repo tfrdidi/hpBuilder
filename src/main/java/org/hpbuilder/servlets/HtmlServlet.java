@@ -13,9 +13,9 @@ import java.io.*;
  *
  * Created by didi on 22.09.2015.
  */
-public class MainServlet extends AbstractServlet {
+public class HtmlServlet extends AbstractServlet {
 
-    final Logger log = LoggerFactory.getLogger(MainServlet.class);
+    final Logger log = LoggerFactory.getLogger(HtmlServlet.class);
 
     @Override
     protected void myGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

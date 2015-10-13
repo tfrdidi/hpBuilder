@@ -1,0 +1,179 @@
+img, embed, object, video {
+    max-width: 100%;
+}
+
+nav a, button {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('/images/startseite.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+}
+
+.historyDiv {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('/images/geschichte.jpg');
+    background-position: center center;
+    height: 200px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+.historyHeader {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('/images/geschichte.jpg');
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+}
+
+.pageHeading {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.subPageHeading {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.subPageHeading h3 {
+    font-size: 16pt;
+    color: rgb(150, 150, 150);
+    margin: 10px;
+}
+
+.subPageHeading h1 {
+    font-size: 31pt;
+    margin: 10px;
+}
+
+.subPageContainer{
+    width: 100%;
+    margin: 2px 0 2px 0;
+    text-align: center;
+}
+
+.articleContainer{
+    width: 100%;
+    margin: 5px auto 30px auto;
+    text-align: center;
+}
+
+.article {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 640px;
+}
+
+
+h3 {
+    font: bold 27pt sans-serif;
+}
+
+h1 {
+    color: white;
+    font: bold 34pt sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    color: rgb(20,20,20);
+    font: bold 31pt sans-serif;
+    margin: 0;
+}
+
+.metaInfos {
+    order: 1;
+}
+
+.metaInfos p {
+    font-family: sans-serif;
+    width: 200px;
+    max-width:620px;
+    font-size: 10pt;
+    color: rgb(120,120,120);
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+}
+
+.textBlock {
+    order: 0;
+    margin-right: auto;
+}
+
+.textBlock p {
+    font-family: sans-serif;
+    max-width: 620px;
+    font-size: 15pt;
+    color: rgb(20,20,20);
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+}
+
+.video {
+    width: 620px;
+    margin: auto;
+}
+
+@media screen and (min-width: 1200px) {
+    .header {
+        height: 470px;
+    }
+    h1 {
+        font: bold 38pt sans-serif;
+    }
+    p {
+        font-size: 17pt;
+    }
+}
+@media screen and (min-width: 860px) {
+    .article {
+        max-width: 860px;
+    }
+    .textBlock {
+        order: 1;
+    }
+    .metaInfos p {
+        text-align: right;
+    }
+    .metaInfos {
+        order: 0;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .video {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1550px) {
+    .article {
+        max-width: 1550px;
+    }
+}

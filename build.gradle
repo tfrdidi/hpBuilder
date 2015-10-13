@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.26'
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.27'
 
     compile 'com.google.appengine:appengine-api-1.0-sdk:' + gaeVersion
     compile 'com.googlecode.objectify:objectify:5.1.5'
@@ -36,6 +36,7 @@ dependencies {
     testCompile 'com.google.appengine:appengine-api-labs:' + gaeVersion
     testCompile 'com.google.appengine:appengine-tools-sdk:1.9.24'
     testCompile 'junit:junit:4.+'
+    testCompile 'org.mockito:mockito-all:2.0.2-beta'
 }
 
 

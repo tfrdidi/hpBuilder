@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
  */
 public class MainContextListener implements ServletContextListener {
 
-    final Logger log = LoggerFactory.getLogger(MainContextListener.class);
+    private final Logger log = LoggerFactory.getLogger(MainContextListener.class);
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
