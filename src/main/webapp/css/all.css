@@ -11,39 +11,65 @@ body {
     margin: 0;
 }
 
-.header {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('/images/startseite.jpg');
+p {
+    font-family: sans-serif;
+    font-size: 15pt;
+    color: rgb(20,20,20);
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+}
+
+.background {
     background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
     position: relative;
+}
+
+.background span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.background.header {
     height: 300px;
 }
 
-.historyDiv {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('/images/geschichte.jpg');
-    background-position: center center;
+.background.button {
     height: 200px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
-    text-align: center;
 }
 
-.historyHeader {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url('/images/geschichte.jpg');
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position: relative;
-    height: 300px;
+#start {
+    background-image: url("/images/start.jpg");
 }
+
+#geschichte {
+    background-image: url("/images/geschichte.jpg");
+}
+
+#dienstgrade {
+    background-image: url("/images/dienstgrade.jpg");
+}
+
+
+
+.background.button span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background: rgba(0,0,0,0.6);
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+.background.button:hover span {
+    background: rgba(0,0,0,0.4);
+}
+
 
 .pageHeading {
     position: absolute;
@@ -55,6 +81,7 @@ body {
 .subPageHeading {
     position: absolute;
     bottom: 0;
+    margin-top: auto;
     width: 100%;
 }
 
@@ -77,7 +104,7 @@ body {
 
 .articleContainer{
     width: 100%;
-    margin: 5px auto 30px auto;
+    margin: 9px auto 35px auto;
     text-align: center;
 }
 
@@ -88,6 +115,23 @@ body {
     max-width: 640px;
 }
 
+.photoTextBlock {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 990px;
+    margin: 10px auto 30px auto;
+}
+
+.photoTextBlock p {
+    max-width: 620px;
+    margin: 10px auto 10px auto;
+    padding: 0;
+    width: 100%;
+}
+
+.photoTextBlock img {
+    margin: 10px auto 10px auto;
+}
 
 h3 {
     font: bold 27pt sans-serif;

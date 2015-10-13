@@ -23,7 +23,7 @@ public class HtmlServlet extends AbstractServlet {
         String uri = req.getRequestURI();
         log.info("Requested URI {}", uri);
         if("/".equals(uri) || "\\".equals(uri)) {
-            uri = "test.html";
+            uri = "start.html";
         }
 
         resp.setContentType("text/html");
