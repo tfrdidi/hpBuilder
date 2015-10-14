@@ -27,6 +27,7 @@ public class HtmlServlet extends AbstractServlet {
         }
 
         resp.setContentType("text/html");
+        resp.setCharacterEncoding("UTF8");
 
         PrintWriter out = resp.getWriter();
         try (
