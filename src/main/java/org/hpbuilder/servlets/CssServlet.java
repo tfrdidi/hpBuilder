@@ -1,6 +1,5 @@
 package org.hpbuilder.servlets;
 
-import com.google.appengine.repackaged.com.google.api.client.http.HttpMediaType;
 import com.google.common.net.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,6 +21,11 @@ public class CssServlet extends AbstractServlet {
         String uri = req.getRequestURI();
         resp.setContentType(MediaType.CSS_UTF_8.type());
         log.info("css");
+
+        if(!uri.endsWith(".css")) {
+            uri = uri + ".css";
+        }
+        uri = uri.substring(1);
 
         PrintWriter out = resp.getWriter();
         try (

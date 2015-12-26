@@ -13,25 +13,42 @@ p {
     -webkit-font-smoothing: antialiased;
 }
 
-h3 {
-    font: bold 27pt sans-serif;
+b {
+    color: rgb(60 ,60, 60);
 }
 
 h1 {
-    color: white;
-    font: bold 34pt sans-serif;
+    font: bold 1.5em sans-serif;
     margin: 0;
     text-align: center;
 }
 
 h2 {
-    color: rgb(20,20,20);
-    font: bold 31pt sans-serif;
+    color: rgb(60, 60, 60);
+    font: bold 1.3em sans-serif;
     margin: 0;
+    padding: 10px;
+}
+
+h3 {
+    font: bold 1.1em sans-serif;
+    text-align: left;
+}
+
+
+.pageHeading h1 {
+    color: rgb(230, 230, 230);
+}
+
+body a, body a:visited{
+    color: #168dd9;
+}
+
+.subPageHeading h3 {
+    color: rgb(230, 230, 230);
 }
 
 body a {
-    color: #168dd9;
     font-style: normal;
     text-decoration: none;
 }
@@ -41,10 +58,12 @@ body a:hover {
 }
 
 body a:visited {
-    color: #168dd9;
     text-decoration: none;
 }
 
+.headingContainer {
+    margin: 0 auto 0 auto;
+}
 
 .background {
     background-position: center center;
@@ -67,16 +86,37 @@ body a:visited {
     height: 200px;
 }
 
+.header.button {
+    height: 28px;
+}
+
+.header.button h1 {
+    margin-top: 15px;
+    color: rgb(60 ,60, 60);
+    font-size: 1.5em;
+    text-align: center;
+}
+
 #start {
-    background-image: url("/images/start.jpg");
+    background-image: url("/images/bannerImages/start.jpg");
 }
 
 #geschichte {
-    background-image: url("/images/geschichte.jpg");
+    background-image: url("/images/bannerImages/geschichte.jpg");
 }
 
 #dienstgrade {
-    background-image: url("/images/dienstgrade.jpg");
+    background-image: url("/images/bannerImages/dienstgrade.jpg");
+}
+
+#ablauf {
+    background-image: url("/images/bannerImages/ablauf.jpg");
+}
+
+.imageInArticle {
+    width: 100%;
+    max-width: 645px;
+    margin-top: 20px;
 }
 
 
@@ -114,7 +154,7 @@ body a:visited {
 .subPageHeading h3 {
     font-size: 16pt;
     text-align: center;
-    color: rgb(170, 170, 170);
+    color: rgb(200, 200, 200);
 }
 
 .subPageHeading h1 {
@@ -122,8 +162,8 @@ body a:visited {
 }
 
 .borderedContainer{
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-style: solid none solid none;
     border-width: 1px;
     border-color: rgb(150,150,150);
@@ -141,11 +181,12 @@ body a:visited {
     width: 100%;
 }
 
-.metaInfos p {
+.metaInfos p, .caption p {
     font-size: 10pt;
     color: rgb(120,120,120);
     margin: 0;
     text-align: left;
+    padding: 3px 15px 15px 10px;
 }
 
 .textBlock {
@@ -164,13 +205,11 @@ body a:visited {
 }
 
 .photoTextBlock p {
-    max-width: 580px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 570px;
 }
 
 .photoTextBlock img {
-    margin: 10px auto 10px auto;
+    margin: 10px auto 0px auto;
 }
 
 .video-container {
@@ -188,6 +227,15 @@ body a:visited {
     height:95%;
     padding-left:10px;
     padding-right:10px;
+}
+
+.footer {
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
+.footer a {
+    margin: 0 20px 0 20px;
 }
 
 @media screen and (min-width: 1200px) {
@@ -214,5 +262,10 @@ body a:visited {
     }
     .metaInfos p {
         text-align: right;
+        padding: 14px;
+    }
+
+    .photoTextBlock img {
+        margin: 10px;
     }
 }
