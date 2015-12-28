@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.27'
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.28'
 
     compile 'com.google.appengine:appengine-api-1.0-sdk:' + gaeVersion
     compile 'com.googlecode.objectify:objectify:5.1.5'

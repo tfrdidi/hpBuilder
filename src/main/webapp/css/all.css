@@ -186,7 +186,8 @@ body a:visited {
     color: rgb(120,120,120);
     margin: 0;
     text-align: left;
-    padding: 3px 15px 15px 10px;
+    padding: 1px 15px 15px 10px;
+    line-height: 1.4em;
 }
 
 .textBlock {
@@ -205,11 +206,11 @@ body a:visited {
 }
 
 .photoTextBlock p {
-    max-width: 570px;
+    max-width: 550px;
 }
 
 .photoTextBlock img {
-    margin: 10px auto 0px auto;
+    margin: 10px auto 0 auto;
 }
 
 .video-container {
