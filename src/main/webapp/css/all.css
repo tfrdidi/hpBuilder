@@ -77,6 +77,9 @@ body a:visited {
     width: 100%;
     background: rgba(0,0,0,0.4);
 }
+.header .background span {
+    margin-top: 9px;
+}
 
 .background.header {
     height: 300px;
@@ -91,10 +94,10 @@ body a:visited {
 }
 
 .header.button h1 {
-    margin-top: 15px;
     color: rgb(60 ,60, 60);
     font-size: 1.5em;
     text-align: center;
+    margin: 10px 0 10px 0;
 }
 
 #start {
@@ -117,6 +120,7 @@ body a:visited {
     width: 100%;
     max-width: 645px;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 
@@ -164,9 +168,13 @@ body a:visited {
 .borderedContainer{
     padding-top: 10px;
     padding-bottom: 10px;
-    border-style: solid none solid none;
+    border-style: none none solid none;
     border-width: 1px;
     border-color: rgb(150,150,150);
+}
+
+.borderedContainer:last-of-type {
+    border-style: none;
 }
 
 .article {
@@ -183,7 +191,7 @@ body a:visited {
 
 .metaInfos p, .caption p {
     font-size: 10pt;
-    color: rgb(120,120,120);
+    color: rgb(140, 140, 140);
     margin: 0;
     text-align: left;
     padding: 1px 15px 15px 10px;
@@ -200,9 +208,12 @@ body a:visited {
 }
 
 .photoTextBlock {
+    max-width: 990px;
+}
+
+.photoTextBlock, .photoTextBlock img, .photoTextBlock .caption {
     display: flex;
     flex-wrap: wrap;
-    max-width: 990px;
 }
 
 .photoTextBlock p {
@@ -210,7 +221,7 @@ body a:visited {
 }
 
 .photoTextBlock img {
-    margin: 10px auto 0 auto;
+    margin: 10px auto 10px auto;
 }
 
 .video-container {
@@ -268,5 +279,9 @@ body a:visited {
 
     .photoTextBlock img {
         margin: 10px;
+    }
+
+    .photoTextBlock .caption {
+        max-width: 250px;
     }
 }
