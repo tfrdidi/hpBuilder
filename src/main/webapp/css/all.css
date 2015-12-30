@@ -226,11 +226,19 @@ body a:visited {
 
 .video-container {
     position:relative;
-    padding-bottom:75%;
-    padding-top:30px;
+    padding-top: 30px;
+    margin-bottom: 10px;
     height:0;
     max-width:640px;
     overflow:hidden;
+}
+
+#video-1976 {
+    padding-bottom: 75%;
+}
+
+#video-2015 {
+    padding-bottom: 54%;
 }
 
 .video-container iframe, .video-container object, .video-container embed {
