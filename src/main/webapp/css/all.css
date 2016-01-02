@@ -87,6 +87,7 @@ body a:visited {
 
 .background.button {
     height: 200px;
+    margin-bottom: 10px;
 }
 
 .header.button {
@@ -125,18 +126,19 @@ body a:visited {
 
 
 
-.background.button span {
+.background.button .overlay {
     display: block;
-    height: 100%;
     width: 100%;
     opacity: 1;
     background: rgba(0,0,0,0.6);
     -moz-transition: all 1s;
     -webkit-transition: all 1s;
     transition: all 1s;
+    padding-top: 30px;
+    height: 170px;
 }
 
-.background.button:hover span {
+.background.button:hover .overlay {
     background: rgba(0,0,0,0.4);
 }
 
@@ -148,21 +150,18 @@ body a:visited {
     text-align: center;
 }
 
-.subPageHeading {
-    position: absolute;
-    bottom: 10px;
-    margin-top: auto;
-    width: 100%;
-}
-
-.subPageHeading h3 {
+.background.button h3 {
     font-size: 16pt;
     text-align: center;
     color: rgb(200, 200, 200);
 }
 
-.subPageHeading h1 {
+.background.button h1 {
     font-size: 28pt;
+}
+
+.placeholder {
+    height: 30px;
 }
 
 .borderedContainer{
@@ -234,11 +233,11 @@ body a:visited {
 }
 
 #video-1976 {
-    padding-bottom: 75%;
+    padding-bottom: 70%;
 }
 
 #video-2015 {
-    padding-bottom: 54%;
+    padding-bottom: 51.2%;
 }
 
 .video-container iframe, .video-container object, .video-container embed {
