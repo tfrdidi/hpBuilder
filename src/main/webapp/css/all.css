@@ -82,7 +82,7 @@ body a:visited {
 }
 
 .background.header {
-    height: 300px;
+    height: 200px;
 }
 
 .background.button {
@@ -102,7 +102,7 @@ body a:visited {
 }
 
 #start {
-    background-image: url("/images/bannerImages/start.jpg");
+    background-image: url("/images/bannerImages/start_500w.jpg");
 }
 
 #geschichte {
@@ -227,9 +227,14 @@ body a:visited {
     position:relative;
     padding-top: 30px;
     margin-bottom: 10px;
-    height:0;
     max-width:640px;
     overflow:hidden;
+}
+
+.video-container p {
+    font-size: 100px;
+    color: rgb(180,30,30);
+    margin: auto;
 }
 
 #video-1976 {
@@ -238,6 +243,13 @@ body a:visited {
 
 #video-2015 {
     padding-bottom: 51.2%;
+}
+
+#video-2015-thumbnail {
+    background-image: url("/images/bannerImages/start.jpg");
+    width: 620px;
+    height: 347px;
+    display: flex;
 }
 
 .video-container iframe, .video-container object, .video-container embed {
@@ -259,6 +271,9 @@ body a:visited {
 
 .fa:before {
     display: inline-block;
+}
+
+.cation .fa:before {
     padding-right: 0.5em;
 }
 
@@ -295,5 +310,27 @@ body a:visited {
 
     .photoTextBlock .caption {
         max-width: 250px;
+    }
+}
+@media (min-width: 500px) and (max-width: 1000px) {
+    #start {
+        background-image: url("/images/bannerImages/start_1000w.jpg");
+    }
+    .background.header {
+        height: 300px;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1500px) {
+    #start {
+        background-image: url("/images/bannerImages/start_1500w.jpg");
+    }
+    .background.header {
+        height: 450px;
+    }
+}
+
+@media (min-width: 1500px) {
+    #start {
+        background-image: url("/images/bannerImages/start.jpg");
     }
 }

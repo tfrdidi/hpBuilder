@@ -1,3 +1,5 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 <div class="background header" id="start">
     <span>
         <div class="pageHeading">
@@ -28,7 +30,22 @@
             Organisiert und durchgeführt wird dieses Fest von den <a href="dienstgrade">Mitgliedern des Sebastianivereins</a>, stellvertretend für die gesamte Lengfurter Bevölkerung.
             Zu diesem Fest sind besonders alle Lengfurter, aber auch alle anderen Interessierten aus nah und fern eingeladen.
         </p>
-        <div class="video-container" id="video-2015"><iframe width="620" height="347" src="https://www.youtube.com/embed/yJqJvWJBTPc" frameborder="0" allowfullscreen></iframe></div>
+
+        <div class="video-container" id="video-2015" style="display:none;">
+        </div>
+
+        <div class="video-container" id="video-2015-thumbnail">
+            <p class="fa fa-youtube-play"> </p>
+        </div>
+
+        <script type="text/javascript">
+            $('#video-2015-thumbnail').click(function() {
+                $('#video-2015').show();
+                $('#video-2015-thumbnail').hide();
+                $('#video-2015').append('<iframe width="620" height="347" src="https://www.youtube.com/embed/yJqJvWJBTPc?autoplay=1" frameborder="0" allowfullscreen></iframe>');
+            });
+        </script>
+
         <div class="caption">
             <p class="fa fa-youtube-play">Vorstellung von Sebastiani bei den Kulturtagen 2015 (7 min). <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> Rafael Pilarsky</p>
         </div>
