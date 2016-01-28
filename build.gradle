@@ -7,7 +7,7 @@ apply plugin: 'appengine'
 
 buildscript {
     ext {
-        gaeVersion = '1.9.24'
+        gaeVersion = '1.9.28'
     }
     repositories {
         mavenCentral()
@@ -17,26 +17,34 @@ buildscript {
     }
 }
 
+// check if JAVA_HOME is set, otherwise build tasks will fail
+gradle.taskGraph.whenReady {
+    graph ->
+        if (System.env.'JAVA_HOME' == null) {
+            throw new GradleException("JAVA_HOME not set. Please set it, otherwise this task can not be executed.")
+        }
+        else {
+            println "JAVA_HOME = " + System.env.'JAVA_HOME'
+        }
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.28'
+    appengineSdk 'com.google.appengine:appengine-java-sdk:1.9.30'
 
-    compile 'com.google.appengine:appengine-api-1.0-sdk:' + gaeVersion
-    compile 'com.googlecode.objectify:objectify:5.1.5'
+    compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.30'
     compile 'javax.servlet:servlet-api:2.5' // GAE works with only with 2.5
-    compile 'commons-fileupload:commons-fileupload:1.2'
     compile 'org.slf4j:slf4j-jdk14:1.7.12'
 
     // testing dependencies
     testCompile 'com.google.appengine:appengine-testing:' + gaeVersion
     testCompile 'com.google.appengine:appengine-api-stubs:' + gaeVersion
     testCompile 'com.google.appengine:appengine-api-labs:' + gaeVersion
-    testCompile 'com.google.appengine:appengine-tools-sdk:1.9.24'
+    testCompile 'com.google.appengine:appengine-tools-sdk:1.9.30'
     testCompile 'junit:junit:4.+'
-    testCompile 'org.mockito:mockito-all:2.0.2-beta'
 }
 
 
@@ -50,4 +58,3 @@ appengine {
         noCookies = false
     }
 }
-

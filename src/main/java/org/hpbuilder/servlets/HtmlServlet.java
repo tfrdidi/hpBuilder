@@ -1,5 +1,6 @@
 package org.hpbuilder.servlets;
 
+import org.hpbuilder.misc.Reader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,9 +42,9 @@ public class HtmlServlet extends AbstractServlet {
         if (uri.contains("generic")) {
             try {
                 log.info("start content creation");
-                String masterPage = getFileContent("sites/generic/master.html");
+                String masterPage = Reader.getFileContentAsString("sites/generic/master.html");
                 uri = uri.substring(1);
-                String content = getFileContent(uri);
+                String content = Reader.getFileContentAsString(uri);
                 String page = MessageFormat.format(masterPage, content);
                 log.info("finished content creation");
                 out.write(page);
@@ -54,34 +55,10 @@ public class HtmlServlet extends AbstractServlet {
                 resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
         } else {
-            try {
-                out.write(getFileContent(uri));
-                resp.setStatus(HttpServletResponse.SC_OK);
-            } catch (Exception e) {
-                log.info("Problem reading file", e);
-                resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            } finally {
-                out.close();
-            }
+            streamFileInResponse(uri, resp);
         }
     }
 
-    private String getFileContent(String path)
-            throws IOException {
-        StringBuffer stringBuffer = new StringBuffer();
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(
-                        new FileInputStream(path), "UTF8"));
-        int len;
-        int bufferLen = 1024 * 1;
-        final char[] buffer = new char[bufferLen];
-        do {
-            len = in.read(buffer);
-            stringBuffer.append(new String(buffer).substring(0, len));
-        } while (len == bufferLen);
-        in.close();
 
-        return stringBuffer.toString();
-    }
 
 }

@@ -102,7 +102,7 @@ body a:visited {
 }
 
 #start {
-    background-image: url("/images/bannerImages/start_500w.jpg");
+    background-image: url("/images/bannerImages/start.jpg?cwidth=650&sheight=200");
 }
 
 #geschichte {
@@ -314,7 +314,7 @@ body a:visited {
 }
 @media (min-width: 500px) and (max-width: 1000px) {
     #start {
-        background-image: url("/images/bannerImages/start_1000w.jpg");
+        background-image: url("/images/bannerImages/start.jpg?cwidth=1100&sheight=300");
     }
     .background.header {
         height: 300px;
@@ -322,7 +322,7 @@ body a:visited {
 }
 @media (min-width: 1000px) and (max-width: 1500px) {
     #start {
-        background-image: url("/images/bannerImages/start_1500w.jpg");
+        background-image: url("/images/bannerImages/start.jpg?cwidth=1500&sheight=450");
     }
     .background.header {
         height: 450px;
@@ -332,5 +332,8 @@ body a:visited {
 @media (min-width: 1500px) {
     #start {
         background-image: url("/images/bannerImages/start.jpg");
+    }
+    .background.header {
+        height: 450px;
     }
 }

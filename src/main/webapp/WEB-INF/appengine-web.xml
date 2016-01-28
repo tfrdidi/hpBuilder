@@ -4,7 +4,6 @@
     <version>alpha-002</version>
     <threadsafe>true</threadsafe>
     <static-files>
-        <include path="/images/**.jpg" expiration="1d" />
         <include path="/css/**.css" expiration="1d" />
         <include path="/favicon.ico" expiration="1d" />
     </static-files>
