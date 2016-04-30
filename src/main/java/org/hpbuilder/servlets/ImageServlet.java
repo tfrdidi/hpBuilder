@@ -48,7 +48,7 @@ public class ImageServlet extends AbstractServlet {
         }
         if(result != null) {
             // compress
-            result = algorithmHashMap.get("compress").run(result, 90);
+            result = new Compress().run(result, 90);
 
             resp.getOutputStream().write(result.getImageData());
         }

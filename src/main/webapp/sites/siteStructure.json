@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Sebastiani Lengfurt",
+    "subtitle": "Ein besonderes Fest",
+    "description": "Sebastiani wird seit 1632 in Lengfurt gefeiert. Dabei wird der Hl. Sebastian mit militärischen Aufmarsch und Gottesdienst geehrt.",
+    "file": "start.html",
+    "image": "/images/bannerImages/start.jpg",
+    "cssId": "start",
+    "masterLayout": "sites/master.html"
+  },
+  {
+    "title": "Ablauf des Festes",
+    "subtitle": "21. – 23.01.2017",
+    "description": "Das nächste Fest findet von 21. – 23.01.2017 in Lengfurt statt. Der Ablauf geht auf die Statuten von 1866 zurück.",
+    "file": "ablauf.html",
+    "image": "/images/bannerImages/ablauf.jpg",
+    "cssId": "ablauf",
+    "masterLayout": "sites/master.html"
+  },
+  {
+    "title": "Dienstgrade und Funktionen",
+    "subtitle": "Hauptmann, Fähnrich und Co.",
+    "description": "Die Dienstgrade und Funktionen gehen auf die Satzung von 1866 zurück. Diese wurde dem damaligen Militär nachempfunden.",
+    "file": "dienstgrade.html",
+    "image": "/images/bannerImages/dienstgrade.jpg",
+    "cssId": "dienstgrade",
+    "masterLayout": "sites/master.html"
+  },
+  {
+    "title": "Geschichte",
+    "subtitle": "Seit 1632",
+    "description": "Seit 1632 wird Sebastiani in Lengfurt gefeiert. Über die Jahre hat das Fest eine bewegende Geschichte miterlebt.",
+    "file": "geschichte.html",
+    "image": "/images/bannerImages/geschichte.jpg",
+    "cssId": "geschichte",
+    "masterLayout": "sites/master.html"
+  }
+]

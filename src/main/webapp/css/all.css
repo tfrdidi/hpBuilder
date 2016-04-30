@@ -102,19 +102,19 @@ body a:visited {
 }
 
 #start {
-    background-image: url("/images/bannerImages/start.jpg?cwidth=650&sheight=200");
+    background-image: url("/images/bannerImages/start.jpg?sheight=300&cheight=200&cwidth=500");
 }
 
 #geschichte {
-    background-image: url("/images/bannerImages/geschichte.jpg");
+    background-image: url("/images/bannerImages/geschichte.jpg?sheight=300&cheight=200&cwidth=500");
 }
 
 #dienstgrade {
-    background-image: url("/images/bannerImages/dienstgrade.jpg");
+    background-image: url("/images/bannerImages/dienstgrade.jpg?sheight=300&cheight=200&cwidth=500");
 }
 
 #ablauf {
-    background-image: url("/images/bannerImages/ablauf.jpg");
+    background-image: url("/images/bannerImages/ablauf.jpg?sheight=300&cheight=200&cwidth=500");
 }
 
 .imageInArticle {
@@ -206,11 +206,13 @@ body a:visited {
     text-align: left;
 }
 
-.photoTextBlock {
+.photoTextBlock, .landscapePhotoTextBlock {
     max-width: 990px;
 }
 
-.photoTextBlock, .photoTextBlock img, .photoTextBlock .caption {
+.photoTextBlock, .photoTextBlock img, .photoTextBlock .caption, .landscapePhotoTextBlock,
+.landscapePhotoTextBlock img, .landscapePhotoTextBlock .caption
+{
     display: flex;
     flex-wrap: wrap;
 }
@@ -223,18 +225,25 @@ body a:visited {
     margin: 10px auto 10px auto;
 }
 
+.landscapePhotoTextBlock .caption {
+    max-width: 800px;
+}
+
+.landscapePhotoTextBlock img {
+    margin: 10px;
+}
+
+.portraitPhotoBlock {
+    margin: 0 auto 0 auto;
+    max-width: 270px;
+}
+
 .video-container {
     position:relative;
     padding-top: 30px;
     margin-bottom: 10px;
     max-width:640px;
     overflow:hidden;
-}
-
-.video-container p {
-    font-size: 100px;
-    color: rgb(180,30,30);
-    margin: auto;
 }
 
 #video-1976 {
@@ -245,12 +254,17 @@ body a:visited {
     padding-bottom: 51.2%;
 }
 
-#video-2015-thumbnail {
-    background-image: url("/images/bannerImages/start.jpg");
-    width: 620px;
-    height: 347px;
-    display: flex;
+#video-2015-thumbnail, #video-1976-thumbnail {
+    display: block;
+    width: 95%;
+    cursor: pointer;
+    max-width: 620px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
+
 
 .video-container iframe, .video-container object, .video-container embed {
     position:absolute;
@@ -316,6 +330,17 @@ body a:visited {
     #start {
         background-image: url("/images/bannerImages/start.jpg?cwidth=1100&sheight=300");
     }
+    #geschichte {
+        background-image: url("/images/bannerImages/geschichte.jpg?cwidth=1100&sheight=300");
+    }
+
+    #dienstgrade {
+        background-image: url("/images/bannerImages/dienstgrade.jpg?cwidth=1100&sheight=300");
+    }
+
+    #ablauf {
+        background-image: url("/images/bannerImages/ablauf.jpg?cwidth=1100&sheight=300");
+    }
     .background.header {
         height: 300px;
     }
@@ -323,6 +348,17 @@ body a:visited {
 @media (min-width: 1000px) and (max-width: 1500px) {
     #start {
         background-image: url("/images/bannerImages/start.jpg?cwidth=1500&sheight=450");
+    }
+    #geschichte {
+        background-image: url("/images/bannerImages/geschichte.jpg?cwidth=1500&sheight=450");
+    }
+
+    #dienstgrade {
+        background-image: url("/images/bannerImages/dienstgrade.jpg?cwidth=1500&sheight=450");
+    }
+
+    #ablauf {
+        background-image: url("/images/bannerImages/ablauf.jpg?cwidth=1500&sheight=450");
     }
     .background.header {
         height: 450px;
@@ -332,6 +368,17 @@ body a:visited {
 @media (min-width: 1500px) {
     #start {
         background-image: url("/images/bannerImages/start.jpg");
+    }
+    #geschichte {
+        background-image: url("/images/bannerImages/geschichte.jpg");
+    }
+
+    #dienstgrade {
+        background-image: url("/images/bannerImages/dienstgrade.jpg");
+    }
+
+    #ablauf {
+        background-image: url("/images/bannerImages/ablauf.jpg");
     }
     .background.header {
         height: 450px;

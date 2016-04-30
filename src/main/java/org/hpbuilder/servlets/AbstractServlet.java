@@ -20,18 +20,19 @@ public abstract class AbstractServlet extends HttpServlet {
 
     private final Logger log = LoggerFactory.getLogger(AbstractServlet.class);
 
-    final int CACHE_DURATION_IN_SECONDS = 60 * 60 * 2; // 2 hours
+    final int CACHE_DURATION_IN_SECONDS = 60 * 60; // 1 hour
     final long CACHE_DURATION_IN_MS = CACHE_DURATION_IN_SECONDS  * 1000;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        log.info("test");
-
-        myGet(req, resp);
-
-        long now = System.currentTimeMillis();
-        resp.addHeader("Cache-Control", "max-age=" + CACHE_DURATION_IN_SECONDS);
-        resp.setDateHeader("Expires", now + CACHE_DURATION_IN_MS);
+        try {
+            myGet(req, resp);
+            resp.addHeader("Cache-Control", "max-age=" + CACHE_DURATION_IN_SECONDS);
+            resp.setDateHeader("Expires", System.currentTimeMillis() + CACHE_DURATION_IN_MS);
+        }
+        catch (IOException e) {
+            resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+        }
     }
 
     protected abstract void myGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException;

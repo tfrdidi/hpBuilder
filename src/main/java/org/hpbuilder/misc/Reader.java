@@ -4,9 +4,6 @@ import com.google.appengine.api.images.Image;
 import com.google.appengine.api.images.ImagesServiceFactory;
 
 import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 /**
  * Collection of static functions to read file content
@@ -18,7 +15,7 @@ public class Reader {
         StringBuilder stringBuffer = new StringBuilder();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream(path), "UTF8"));
+                        new FileInputStream(path), "UTF-8"));
         int len;
         int bufferLen = 1024;
         final char[] buffer = new char[bufferLen];
