@@ -42,9 +42,21 @@ public class SiteManager {
 
     private void readSiteContent(Chapter chapter) {
         try {
+            // create links to all pages
+            String siteLinkTemplate = Reader.getFileContentAsString(
+                    chapter.getDirectory() + chapter.getPathOfLinkTemplate());
+
             for(Site site : chapter.getSiteList()) {
                 String path = chapter.getDirectory() + site.getFile();
-                String content = Reader.getFileContentAsString(path);
+                String listOfContents = "";
+                for(Site _site : chapter.getSiteList()) {
+                    if(!_site.getFile().equals(site.getFile())) {
+                        String link = MessageFormat.format(siteLinkTemplate,
+                                _site.getCssId(), _site.getSubtitle(), _site.getTitle());
+                        listOfContents += link;
+                    }
+                }
+                String content = Reader.getFileContentAsString(path) + listOfContents;
                 String ogTitle = site.getTitle();
                 String ogUrl = appUrl + "/" + site.getCssId();
                 String ogImage = appUrl + site.getImage();
@@ -69,6 +81,6 @@ public class SiteManager {
     }
 
     public String getStartSiteUri() {
-        return chapter.getStartSite();
+        return chapter.getDirectory() + chapter.getStartSite();
     }
 }
