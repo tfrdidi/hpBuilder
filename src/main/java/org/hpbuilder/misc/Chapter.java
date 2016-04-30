@@ -7,6 +7,8 @@ package org.hpbuilder.misc;
 public class Chapter {
     private String pathOfLinkTemplate;
     private Site[] siteList;
+    private String startSite;
+    private String directory;
 
     public String getPathOfLinkTemplate() {
         return pathOfLinkTemplate;
@@ -22,5 +24,21 @@ public class Chapter {
 
     public void setSiteList(Site[] siteList) {
         this.siteList = siteList;
+    }
+
+    public String getStartSite() {
+        return startSite;
+    }
+
+    public void setStartSite(String startSite) {
+        this.startSite = startSite;
+    }
+
+    public String getDirectory() {
+        return directory;
+    }
+
+    public void setDirectory(String directory) {
+        this.directory = directory;
     }
 }

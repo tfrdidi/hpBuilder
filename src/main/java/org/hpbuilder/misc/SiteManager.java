@@ -1,64 +1,50 @@
 package org.hpbuilder.misc;
 
 
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.text.MessageFormat;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class that manages the metadata of all sites.
  */
 public class SiteManager {
 
-    private Map<String, Site> sites;
-    private String startSiteUri;
+    private Chapter chapter;
     private String appUrl;
-    private String contentSubDir;
+    private Map<String, Site> sites;
 
     public SiteManager() {
-        this("sites/content/", "sites/siteStructure.json", "http://driven-park-107519.appspot.com");
+        this("sites/siteStructure.json", "http://driven-park-107519.appspot.com");
     }
 
-    public SiteManager(String contentSubDir, String configFile, String appUrl) {
+    public SiteManager(String configFile, String appUrl) {
         this.appUrl = appUrl;
-        this.contentSubDir = contentSubDir;
         this.sites = new HashMap<>();
         readSiteStructure(configFile);
-        readSiteContent(sites);
+        readSiteContent(chapter);
     }
 
     private void readSiteStructure(String configFile) {
-
-
         try {
             String siteStructureFile = Reader.getFileContentAsString(configFile);
             Gson gson = new GsonBuilder().create();
 
-            Chapter chapter = gson.fromJson(siteStructureFile, Chapter.class);
-            Site[] siteStructure = chapter.getSiteList();
-            boolean firstSite = true;
-            for (Site s : siteStructure) {
-                s.setFile(contentSubDir + s.getFile());
-                sites.put(s.getFile(), s);
-                if(firstSite) {
-                    startSiteUri = s.getFile();
-                    firstSite = false;
-                }
-            }
+            chapter = gson.fromJson(siteStructureFile, Chapter.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void readSiteContent(Map<String, Site> sites) {
+    private void readSiteContent(Chapter chapter) {
         try {
-            List<Site> siteList = new ArrayList<>(sites.values());
-            for(Site site : siteList) {
-                String content = Reader.getFileContentAsString(site.getFile());
+            for(Site site : chapter.getSiteList()) {
+                String path = chapter.getDirectory() + site.getFile();
+                String content = Reader.getFileContentAsString(path);
                 String ogTitle = site.getTitle();
                 String ogUrl = appUrl + "/" + site.getCssId();
                 String ogImage = appUrl + site.getImage();
@@ -67,6 +53,7 @@ public class SiteManager {
                 String siteContent = MessageFormat.format(masterLayout, ogTitle, ogUrl,
                         ogImage, ogDescription, site.getCssId(), content);
                 site.setContent(siteContent);
+                sites.put(path, site);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,6 +69,6 @@ public class SiteManager {
     }
 
     public String getStartSiteUri() {
-        return startSiteUri;
+        return chapter.getStartSite();
     }
 }

@@ -1,5 +1,7 @@
 {
   "pathOfLinkTemplate": "siteLinkTemplate.html",
+  "startSite": "start.html",
+  "directory": "sites/content/",
   "siteList":
   [
     {
