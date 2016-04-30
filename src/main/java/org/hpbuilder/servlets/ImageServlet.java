@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * Created by didi on 13.10.2015.
+ * Servlet for images. Offers different Algorithms to run on the images
+ * before they are served. As their execution time is so minimal, it is
+ * better to perform them on runtime as to save images in each sizes.
  */
 public class ImageServlet extends AbstractServlet {
 
