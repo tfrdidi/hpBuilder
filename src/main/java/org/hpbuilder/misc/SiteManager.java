@@ -1,7 +1,9 @@
 package org.hpbuilder.misc;
 
 
-import com.google.appengine.repackaged.com.google.gson.Gson;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -26,15 +28,18 @@ public class SiteManager {
         this.contentSubDir = contentSubDir;
         this.sites = new HashMap<>();
         readSiteStructure(configFile);
-        readSiteContent();
+        readSiteContent(sites);
     }
 
     private void readSiteStructure(String configFile) {
-        Gson gson = new Gson();
+
+
         try {
             String siteStructureFile = Reader.getFileContentAsString(configFile);
+            Gson gson = new GsonBuilder().create();
 
-            Site[] siteStructure = gson.fromJson(siteStructureFile, Site[].class);
+            Chapter chapter = gson.fromJson(siteStructureFile, Chapter.class);
+            Site[] siteStructure = chapter.getSiteList();
             boolean firstSite = true;
             for (Site s : siteStructure) {
                 s.setFile(contentSubDir + s.getFile());
@@ -49,7 +54,7 @@ public class SiteManager {
         }
     }
 
-    private void readSiteContent() {
+    private void readSiteContent(Map<String, Site> sites) {
         try {
             List<Site> siteList = new ArrayList<>(sites.values());
             for(Site site : siteList) {

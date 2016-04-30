@@ -38,6 +38,7 @@ dependencies {
     compile 'com.google.appengine:appengine-api-1.0-sdk:1.9.30'
     compile 'javax.servlet:servlet-api:2.5' // GAE works with only with 2.5
     compile 'org.slf4j:slf4j-jdk14:1.7.12'
+    compile 'com.google.code.gson:gson:2.6.2'
 
     // testing dependencies
     testCompile 'com.google.appengine:appengine-testing:' + gaeVersion

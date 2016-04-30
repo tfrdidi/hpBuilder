@@ -14,12 +14,19 @@ import java.io.PrintWriter;
  */
 public class HtmlServlet extends AbstractServlet {
 
-    private SiteManager siteManager = new SiteManager();
+    private SiteManager siteManager;
+
+    private SiteManager getSiteManager() {
+        if (siteManager== null) {
+            siteManager = new SiteManager();
+        }
+        return siteManager;
+    }
 
     @Override
     protected void myGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String uri = getUriFromRequest(req);
-        Site site = siteManager.getSite(uri);
+        Site site = getSiteManager().getSite(uri);
         if(site != null) {
             PrintWriter out = resp.getWriter();
             resp.setCharacterEncoding("UTF-8");
@@ -35,7 +42,7 @@ public class HtmlServlet extends AbstractServlet {
     private String getUriFromRequest(HttpServletRequest request) {
         String uri = request.getRequestURI();
         if ("/".equals(uri) || "\\".equals(uri)) {
-            uri = siteManager.getStartSiteUri();
+            uri = getSiteManager().getStartSiteUri();
         } else if (!uri.contains("/sites/content")) {
             uri = "/sites/content" + uri;
         }
