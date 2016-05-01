@@ -1,4 +1,4 @@
-package org.hpbuilder.misc;
+package org.hpbuilder.model;
 
 /**
  * Represents a part of the whole homepage with several sizes.

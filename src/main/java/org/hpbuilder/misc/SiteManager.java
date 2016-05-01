@@ -3,6 +3,9 @@ package org.hpbuilder.misc;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.hpbuilder.model.Chapter;
+import org.hpbuilder.model.Homepage;
+import org.hpbuilder.model.Site;
 
 import java.io.IOException;
 import java.text.MessageFormat;
@@ -14,19 +17,18 @@ import java.util.Map;
  */
 public class SiteManager {
 
-    private Chapter chapter;
-    private String appUrl;
+    private Homepage homepage;
+    private String startSiteUri;
     private Map<String, Site> sites;
 
     public SiteManager() {
-        this("sites/siteStructure.json", "http://driven-park-107519.appspot.com");
+        this("sites/siteStructure.json");
     }
 
-    public SiteManager(String configFile, String appUrl) {
-        this.appUrl = appUrl;
+    public SiteManager(String configFile) {
         this.sites = new HashMap<>();
         readSiteStructure(configFile);
-        readSiteContent(chapter);
+        readSiteContent(homepage);
     }
 
     private void readSiteStructure(String configFile) {
@@ -34,14 +36,19 @@ public class SiteManager {
             String siteStructureFile = Reader.getFileContentAsString(configFile);
             Gson gson = new GsonBuilder().create();
 
-            chapter = gson.fromJson(siteStructureFile, Chapter.class);
+            homepage = gson.fromJson(siteStructureFile, Homepage.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void readSiteContent(Chapter chapter) {
+    private void readSiteContent(Homepage homepage) {
         try {
+            Chapter chapter = homepage.getRoot();
+            String appUrl = homepage.getGaeUrl();
+
+            startSiteUri = chapter.getDirectory() + chapter.getStartSite();
+
             // create links to all pages
             String siteLinkTemplate = Reader.getFileContentAsString(
                     chapter.getDirectory() + chapter.getPathOfLinkTemplate());
@@ -81,6 +88,6 @@ public class SiteManager {
     }
 
     public String getStartSiteUri() {
-        return chapter.getDirectory() + chapter.getStartSite();
+        return startSiteUri;
     }
 }

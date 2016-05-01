@@ -1,4 +1,4 @@
-package org.hpbuilder.misc;
+package org.hpbuilder.model;
 
 /**
  * Object representing one site of this website.

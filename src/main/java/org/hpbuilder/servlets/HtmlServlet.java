@@ -1,6 +1,6 @@
 package org.hpbuilder.servlets;
 
-import org.hpbuilder.misc.Site;
+import org.hpbuilder.model.Site;
 import org.hpbuilder.misc.SiteManager;
 
 import javax.servlet.ServletException;
